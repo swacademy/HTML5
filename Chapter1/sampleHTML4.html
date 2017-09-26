@@ -1,0 +1,35 @@
+<!--
+  Source From : HTML5 API 프로그래밍, 조용준, 가메출판사, 2017, p. 16-17.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title>HTML4 구성요소</title>
+  <style type="text/css">
+    #title {
+      font-size:2em;
+      color:blue;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="title">HTML4 페이지의 구성 요소</p>
+   <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+   </ul>
+</body>
+
+<script type="text/javascript">
+  var lis = document.querySelectorAll("li");
+  for(var i in lis){
+    lis[i].addEventListener("click", function(){
+      alert(this.innerHTML);
+    });
+  }
+</script>
+</html>
