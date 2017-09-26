@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Output Tag </title>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			function add(){
+				var a = parseInt(prompt("First Number : ", 0));
+				var b = parseInt(prompt("Second Number : ", 0));
+				document.forms[0].result.value = a + b;
+			}
+		</script>
+	</head>
+	<body onload="add()">
+		<h1>Output Tag</h1>
+		<form>
+			<label>두 개의 정수의 합 : </label>
+			&nbsp;&nbsp;&nbsp;
+			<output name="result">Result</output>
+		</form>
+	</body>
+</html>
+
+
