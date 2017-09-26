@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+ <head>
+  <title> html5에 추가된 폼컨트롤들 </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/form.css" />
+ </head>
+
+ <body>
+  <form id="payment">
+	<fieldset>
+		<legend>로그인 정보</legend>
+		<ul>
+			<li><label for="id">아이디</label>
+			<input type="text" id="id" name="id" required autofocus /></li>
+			<li><label for="pwd">비밀번호</label>
+			<input type="password" id="pwd" name="pwd" required /></li>
+			<li><label for="pwd2">비밀번호 확인</label>
+			<input type="password" id="pwd2" name="pwd2" required /></li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend>개인 정보 입력</legend>
+		<ul>
+			<li><label for="name">이름</label>
+			<input type="text" id="name" name="name" placeholder="5자 미만 공백없이" /></li>
+			<li><label for="mail">메일주소</label>
+			<input type="email" id="mail" name="mail" placeholder="example@domain.com" /></li>
+			<li><label for="homeP">홈페이지</label>
+			<input type="url" id="homeP" name="homeP" placeholder="http://www.abcd.com" /></li>
+			<li><label for="telNum">전화번호</label>
+			<input type="tel" id="telNum" name="telNum" placeholder="02)1111-1111" /></li>
+			<li><label for="skill">코딩숙련도(상,중,하)</label>
+			<input type="range" id="skill" name="skill" min="1" max="3" step="1" /></li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend>주문 내용</legend>
+		<ul>
+			<li><label for="pName">상품명</label>
+			<input type="text" id="pName" name="pName" readonly value="셔츠" /></li>
+			<li><label for="pColor">색상</label>
+			<input type="text" id="pColor" name="pColor" list="myColor" />
+			<datalist id="myColor">
+				<option value="black" label="검정색" />
+				<option value="white" label="흰색" />
+				<option value="skyblue" label="하늘색" />
+			</datalist>
+			</li>
+			<li><label for="pNum">주문개수</label>
+			<input type="number" id="pNum" name="pNum" min="1" max="10" step="1" value="1"  /></li>
+		</ul>
+	</fieldset>
+
+	<fieldset>
+		<legend>배송일</legend>
+		<ul>
+			<li>최소 배송일은 주말 및 공휴일을 제외하고 주문일 이후 3일입니다.</li>
+			<li><label for="pDate">원하는 배송일</label>
+			<input type="date" id="pDate" name="pDate" /></li>
+		</ul>
+	</fieldset>
+	<div>
+		<button type="submit">구매하기</button>
+	</div>
+  </form>
+ </body>
+</html>
