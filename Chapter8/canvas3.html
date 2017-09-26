@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>Canvas Tag</title>
+         <style type="text/css">
+            #mycanvas { border:1px solid #000000;}
+         </style>
+    </head>
+    <body>
+        <canvas id="mycanvas" width="500" height="300">
+		</canvas>
+        <script type="text/javascript">
+            var canvas=document.getElementById('mycanvas');
+            var cvas=canvas.getContext('2d');
+			
+            cvas.font = "30px Gothic";
+            cvas.fillStyle = "rgba(255,0,0,1)";
+            cvas.shadowColor = "rgba(0,255,0,0.9)";
+            cvas.shadowOffsetX="10";
+            cvas.shadowOffsetY= "10";
+            cvas.shadowBlur="15";
+			
+            cvas.textAlign = "start";
+            cvas.fillText("Hello, World!!!", 150, 30);
+			
+            cvas.textAlign = "end";
+            cvas.fillText("Hello, World!!!", 150, 70);
+			
+            cvas.textAlign = "left";
+            cvas.fillText("Hello, World!!!", 150, 110);
+			
+            cvas.textAlign = "center";
+            cvas.fillText("Hello, World!!!", 150, 150);  
+			
+            cvas.textAlign = "right";
+            cvas.fillText("Hello, World!!!", 150, 190);
+			
+            cvas.textAlign = "center";
+            cvas.strokeStyle = "#0000FF";
+			
+            cvas.strokeText("Hello, World!!!", 150, 240);
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
