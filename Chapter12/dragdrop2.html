@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Drag and Drop Example	</title>
+		<link rel="stylesheet" type="text/css" href="css/dragdrop2.css">
+
+		<script type="text/javascript" src="scripts/dragdrop2.js">
+		</script>
+	</head>
+	<body>
+		<h1>Drag and Drop Example</h1>
+		<div id="target1" ondragover="return over(event)" 
+		ondragenter="return enter(event)" ondrop="return drop(event)">
+			<div id="draggable1" draggable="true" ondragstart="return start(event)" 
+			ondragend="return end(event)"> 1 </div>
+			<div id="draggable2" draggable="true" ondragstart="return start(event)" 
+			ondragend="return end(event)"> 2 </div>
+			<div id="draggable3" draggable="true" ondragstart="return start(event)"
+			ondragend="return end(event)"> 3 </div>
+		</div>
+		<div id="target2" ondragover="return over(event)" 
+		ondragenter="return enter(event)" ondrop="return  drop(event)"></div>
+		<div id="target3" ondragover="return over(event)" 
+		ondragenter="return enter(event)" ondrop="return drop(event)"> </div> 
+	</body>
+</html>
+
+
+

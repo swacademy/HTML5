@@ -1,0 +1,11 @@
+#target1, #target2, #target3{	
+	float : left; width : 250px; height : 250px; 
+	padding : 10px; margin : 10px; background-color : cyan; 
+}
+#draggable1, #draggable2, #draggable3{ 
+	width : 75px; height : 70px; padding : 5px; 
+	margin : 5px; background-color : orange;
+}
+
+
+
