@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cookie Count</title>
+	<script>
+		window.addEventListener('load', setup, false);
+		function setup(){
+			if(!navigator.cookieEnabled){
+				alert('Cookie Not Support');  return;
+			}
+			var value = getCookie('mycount');
+			if(value){
+				value = parseInt(value);
+				value++;
+				setCookie('mycount', value);
+				document.querySelector('#count').innerHTML = value;
+			}else{
+				setCookie('mycount', 0);
+			}
+		}
+		function getCookie(key){
+			var cookie = document.cookie;  //mycount=0
+			var start = cookie.indexOf(key + '=');
+			if(start != -1) {  //찾았다면
+				var end = cookie.indexOf(';', start);
+				if(end == -1) end = cookie.length;
+				var value = cookie.substring(start, end);
+			}
+			return value.split('=')[1];
+		}
+		function setCookie(key, value){
+			var now = new Date();
+			now.setTime(now.getTime() + 60 * 60 * 24 * 1000);
+			document.cookie = key + '=' + encodeURI(value) + ';expires=' + now.toUTCString() + ';path=/';
+		}
+	</script>
+</head>
+<body>
+		방문자수 : <span id='count'>0</span>
+</body>
+</html>
