@@ -1,0 +1,29 @@
+<!--
+	Shunpei Shiraishi 저/안동현 역, <웹 혁명을 꿈꾸다. HTML5 & API 입문>, 주식회사 프리렉, 2010, p.104.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>음성 데이터 preload 예제</title>
+	<script>
+		//Audio 객체를 여러 개 생성
+		var audios = {
+			"262Hz" : new Audio("https://upload.wikimedia.org/wikipedia/commons/0/03/262Hz.ogg"),
+			"392Hz" : new Audio("https://upload.wikimedia.org/wikipedia/commons/7/71/392Hz.ogg")
+			
+		};
+		//Page loading 이 끝나면 이 page에서 사용할 음성 data를 읽어들여 cache에 저장
+		function preload(){
+			for(var i in audios){
+				audios[i].load();
+			}
+		}
+	</script>
+</head>
+<body onload='preload()'>
+	<button onclick="audios['262Hz'].play()">262Hz</button>
+	<button onclick="audios['392Hz'].play()">392Hz</button>
+</body>
+</html>

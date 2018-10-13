@@ -1,0 +1,40 @@
+<!--
+	Shunpei Shiraishi 저/안동현 역, <웹 혁명을 꿈꾸다. HTML5 & API 입문>, 주식회사 프리렉, 2010, p.101-102 일부 편집.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>간단한 동영상 플레이어</title>
+	<script>
+		window.addEventListener('load', function(){
+			document.querySelector('#btnPlay').addEventListener('click', function(){
+				var videoUrl = document.querySelector('#videoUrl').value;
+				var video = document.querySelector('#video');
+				//video가 재생 중이지 않을 때
+				if(video.paused){
+					//URL이 바뀌었다면 media data를 다시 읽어들임.
+					if(videoUrl != video.src){
+						video.src = videoUrl;
+						video.load();
+					}else{
+						//재생
+						video.play();
+					}
+					document.querySelector('#btnPlay').value = '일시 정지';
+				}else{
+					//일시 정지
+					video.pause();
+					document.querySelector('#btnPlay').value = '정지';
+				}
+			},false);
+		},false);
+	</script>
+</head>
+<body>
+	<video controls="controls" id='video' width='400' height='300' autoplay></video><br />
+    	동영상 URL : <input type="text" id='videoUrl'>
+      <input type="button" id='btnPlay' value='재생'>
+</body>
+</html>
